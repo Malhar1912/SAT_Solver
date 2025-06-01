@@ -33,8 +33,8 @@ This project implements a SAT solver based on the classical **DPLL (Davis–Putn
 ### 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/dpll-sat-visualizer.git
-cd dpll-sat-visualizer
+git clone https://github.com/Malhar1912/SAT_Solver.git
+cd SAT_Solver
 ```
 
 ### 2. Install dependencies:
