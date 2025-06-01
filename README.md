@@ -1,71 +1,105 @@
-🧠 DPLL SAT Solver with Decision Tree Visualization
-This project implements a SAT solver based on the DPLL (Davis–Putnam–Logemann–Loveland) algorithm, enhanced with powerful heuristics such as:
 
-Unit Propagation to simplify clauses,
+# 🧠 DPLL SAT Solver with Decision Tree Visualization
 
-Pure Literal Elimination to quickly assign literals that appear with only one polarity,
+This project implements a SAT solver based on the classical **DPLL (Davis–Putnam–Logemann–Loveland)** algorithm enhanced with powerful heuristics like unit propagation and pure literal elimination. It features an intuitive **decision tree visualization** that illustrates the solver’s backtracking and conflict resolution steps using `networkx` and `matplotlib`.
 
-And a graph-based visualization of the decision tree using the networkx and matplotlib libraries.
+---
 
-This visualization helps to intuitively understand the backtracking decisions and conflicts encountered during the SAT solving process.
+## 🚀 Features
 
-📁 Project Structure
+- **Random CNF Formula Generator:** Create k-CNF formulas with customizable numbers of variables and clauses for testing.
+- **Efficient DPLL Solver:** Recursive backtracking with heuristics for unit propagation and pure literal elimination.
+- **Decision Tree Visualization:** Graphically displays variable assignments, backtracking, and conflicts as a decision tree.
+- **Color-coded Nodes:** Green nodes represent satisfiable branches, red nodes indicate conflicts where backtracking occurs.
+
+---
+
+## 📁 Project Structure
+
+```
 ├── cnf_generator.py      # Generates random CNF formulas
-├── sat_helpers.py        # Helper functions for unit propagation and pure literals
-├── dpll_solver.py        # Core DPLL algorithm with decision tree generation
-├── visualization.py      # Graph visualization utilities using networkx and matplotlib
-├── main.py               # Main execution script to run the solver
+├── sat_helpers.py        # Helper functions for unit propagation and pure literal elimination
+├── dpll_solver.py        # Core DPLL algorithm implementation with decision tree support
+├── visualization.py      # Visualization utilities for decision tree using networkx & matplotlib
+├── main.py               # Main script to run solver and visualize results
 ├── requirements.txt      # Python dependencies
-└── README.md             # Project documentation
-🚀 How to Run
-1. Clone the Repository
+└── README.md             # This file
+```
+
+---
+
+## 💻 Installation and Usage
+
+### 1. Clone the repository:
+
+```bash
 git clone https://github.com/your-username/dpll-sat-visualizer.git
 cd dpll-sat-visualizer
-2. Install Dependencies
+```
+
+### 2. Install dependencies:
+
+```bash
 pip install -r requirements.txt
-3. Run the Solver
+```
+
+### 3. Run the solver:
+
+```bash
 python main.py
-📌 Features:
+```
 
-Random CNF Generation:
-Generates k-CNF formulas with a configurable number of variables and clauses for testing.
+This will execute the solver on a sample CNF formula and generate a decision tree visualization.
 
-DPLL SAT Solver:
-Employs recursive backtracking combined with unit propagation and pure literal heuristics for efficient solving.
+---
 
-Decision Tree Visualization:
-Visualizes each assignment decision and backtracking step as nodes in a decision tree graph, making it easier to follow the solving process.
+## 📋 Example CNF Formula
 
-🖼️ Sample Visualization
-The decision tree graph clearly indicates:
+You can customize CNF formulas in `cnf_generator.py` or pass your own clauses. Example:
 
-The current variable assignments at each node,
-
-Timestamp of each decision,
-
-Green nodes for satisfiable branches,
-
-Red nodes marking conflicts where backtracking occurs.
-
-
-
-📋 Example CNF Formula
-# Sample CNF with 4 variables and 6 clauses:
+```python
 [[1, -3, 2], [-1, 2, 4], [3, -4, 1], [-2, 3, -1], [-4, 2, 1], [4, -3, -2]]
+```
 
-📚 References
-Davis, M., & Putnam, H. (1960). A Computing Procedure for Quantification Theory.
+---
 
-Handbook of Satisfiability, Biere et al.
+## 🖼️ Visualization
 
-Official documentation for networkx and matplotlib.
+The generated decision tree graph shows:
 
-✅ Future Enhancements
-Support for CNF input from DIMACS files.
+- Current variable assignments at each node
+- Decision timestamps
+- Green nodes for satisfiable paths
+- Red nodes where conflicts cause backtracking
 
-Interactive and web-based visualization of the decision tree (e.g., using Plotly or PyVis).
+---
 
-Integration of advanced SAT solver techniques such as clause learning and backjumping.
+## 📚 References
 
-🧑‍💻 Author
-Malhar Pangarkar
+- Davis, M., & Putnam, H. (1960). *A Computing Procedure for Quantification Theory*.
+- Handbook of Satisfiability, Biere et al.
+- [networkx Documentation](https://networkx.org/)
+- [matplotlib Documentation](https://matplotlib.org/)
+
+---
+
+## ✅ Future Enhancements
+
+- Support for standard **DIMACS CNF input files**.
+- Interactive web-based visualizations (using Plotly, PyVis, etc.).
+- Implementation of advanced SAT solver techniques like **clause learning** and **backjumping**.
+
+---
+
+## 🧑‍💻 Author
+
+**Malhar Pangarkar**
+
+---
+
+Feel free to open issues or contribute via pull requests!
+
+---
+
+*Happy SAT solving!* 🎉
+
